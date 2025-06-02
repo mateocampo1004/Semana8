@@ -131,7 +131,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
-
+![alt text](image-2.png)
 ### Paso 5: Levantar y probar los servicios
 
 ```bash
@@ -139,8 +139,9 @@ docker compose up -d --build
 ```
 
 - Accede a **pgAdmin** en: http://localhost:8083  
+![alt text](image.png)
 - Accede al backend en: http://localhost:8081/users
-
+![alt text](image-1.png)
 ## 9. Resultados
 
 Se logró desplegar un backend funcional dentro de un contenedor Docker, conectado correctamente a PostgreSQL y accesible mediante red local. Flyway aplicó la migración SQL correctamente, y la base fue visible desde pgAdmin. El backend respondió exitosamente al endpoint `/users`, evidenciando una integración total entre servicios y correcta configuración de variables de entorno.
